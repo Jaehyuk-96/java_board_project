@@ -2,9 +2,9 @@
 자바와 데이터베이스 사이를 자동 매핑 기능을 지원하는 mybatis를 이용해서 mariaDB에 저장하고 게시판 CRUD를 만들어보는 프로젝트입니다.<br>
 -----------------------------------------------------------------------------------------------------------------------------------------------
 #기술스택
-![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/b5061fc7-7708-48cb-8d5f-77ece6976f20)
-![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/f0a53ea5-cc17-4a17-a5d9-8aef761f5932)
-![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/a4c9afc5-30fe-44ed-b9af-3a2af679c328)
+![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/b5061fc7-7708-48cb-8d5f-77ece6976f20)<br>
+![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/f0a53ea5-cc17-4a17-a5d9-8aef761f5932)<br>
+![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/a4c9afc5-30fe-44ed-b9af-3a2af679c328)<br>
 -----------------------------------------------------------------------------------------------------------------------------------------------
 <h2>주요기능</h2>
 * Java로 CRUD 기능을 가진 게시판을 구현
