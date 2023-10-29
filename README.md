@@ -6,9 +6,9 @@ Java_Board_Project
 
 기술스택
 -----------------------------------------------------------------------------------------------------------------------------------------------
-![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/b5061fc7-7708-48cb-8d5f-77ece6976f20)<br>
-![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/f0a53ea5-cc17-4a17-a5d9-8aef761f5932)<br>
-![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/a4c9afc5-30fe-44ed-b9af-3a2af679c328)<br>
+![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/b5061fc7-7708-48cb-8d5f-77ece6976f20)<br><br>
+![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/f0a53ea5-cc17-4a17-a5d9-8aef761f5932)<br><br>
+![image](https://github.com/Jaehyuk-96/java_board_project/assets/145963663/a4c9afc5-30fe-44ed-b9af-3a2af679c328)<br><br>
 
 주요기능
 -----------------------------------------------------------------------------------------------------------------------------------------------
