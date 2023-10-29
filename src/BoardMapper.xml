@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardMapper">
+
+<!--	BoardMapper 인터페이스와 메소드를 연결하는 MyBatis mapper 파일-->
+
+<!--	getBoard 메소드에 필요한 sql 쿼리-->
+<!--	통째로 다가져옴-->
+	<select id="getBoard" resultType="Board">
+      SELECT *
+      FROM t_board
+    </select>
+<!--	readBoard 메소드에 필요한 sql 쿼리-->
+<!--	특정 bno의 게시글 반환-->
+	<select id="readBoard" resultType="Board">
+		Select *
+		From t_board
+		WHERE bno = #{bno}
+
+	</select>
+
+
+<!--	insertBoard 메소드에 필요한 sql 쿼리-->
+<!--	Board의 매개변수를 받아서 게시글을 추가함-->
+    <insert id="insertBoard" parameterType="Board" >
+    	INSERT INTO t_board
+    	SET `btitle` = #{btitle},
+		bcontent = #{bcontent},
+		bwriter = #{bwriter},
+		bdate = #{bdate}
+    </insert >
+
+<!--	updateBoard 메소드에 필요한 sql 쿼리-->
+<!--	특정 bno를 받아서 그 게시글에 대한 정보만 매개변수를 받아 업데이트함-->
+  	<update id="updateBoard" parameterType="Board">
+  		UPDATE t_board
+  		SET `btitle` = #{btitle},
+		bcontent = #{bcontent},
+    	bwriter = #{bwriter},
+		bdate = #{bdate}
+    	WHERE bno = #{bno}
+  	</update>
+
+<!--	deleteBoard 메소드에 필요한 sql 쿼리-->
+<!--	특정 번호 매개변수를 받아서 그번호의 게시글 삭제-->
+  	<delete id="deleteBoard" parameterType="int">
+  		DELETE FROM t_board
+  		WHERE bno = #{bno}
+  	</delete>
+
+<!--	clearBoard 메소드에 필요한 sql 쿼리-->
+<!--	매개변수 사용없이 전체 게시글 삭제-->
+	<delete id="clearBoard" parameterType="Board">
+		DELETE FROM t_board
+	</delete>
+  
+</mapper>
