@@ -19,7 +19,7 @@ Java_Board_Project
     <summary>Create보기</summary>
     <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/73c5bd66-9c49-4f37-a4dd-c0f42603e676" height="200px"  width="300px"/>
   <br/>   
-
+	   
 ```java
 // 게시글을 새롭게 추가하는 메서드
 public void insertBoard(String btitle, String bcontent, String bwriter, Date bdate) {
@@ -32,7 +32,7 @@ session.commit();
 ```
 
 ```java
-<!--게시물 추가 sql 쿼리-->
+<!--게시글 추가 sql 쿼리-->
 <!--Board의 매개변수를 받아서 게시글을 추가함-->
     <insert id="insertBoard" parameterType="Board" >
     	INSERT INTO t_board
@@ -43,26 +43,117 @@ session.commit();
     </insert >
 	}
 ```
- 
- 
-  
 </details>
-게시물 등록하기
+<br/>
+ <details>
+    <summary>Read보기</summary>
+   <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/df13d800-0fb0-4c52-9218-5404141de2f3" height="200px"  width="300px"/>
+  <br/>   
 
+```java
+//게시글의 bno로 데이터베이스에서 게시글을 가져오는 메소드
+	public ArrayList<Board> readBoard(int bno){
+		SqlSession session = sqlSessionFactory.openSession();
+		BoardMapper mapper = session.getMapper(BoardMapper.class);
+		ArrayList<Board> specificBoard = mapper.readBoard(bno);//bno를 기반으로 데이터베이스에서 게시글을 검색
+		return specificBoard;//게시글 반환
+	}
+```
+
+```html
+<!--게시글 읽기 sql 쿼리-->
+<!--특정 bno의 게시글 반환-->
+	<select id="readBoard" resultType="Board">
+		Select *
+		From t_board
+		WHERE bno = #{bno}
+	</select>
+```
+	
+</details>
+<br/>
+ <details>
+    <summary>Update보기</summary>
+   <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4bcd8d50-4163-4607-b1cd-893a8b49b28b" height="200px"  width="300px"/>
+  <br/>   
+
+```java
+//데이터베이스의 게시글을 수정하는 메서드
+	public void updateBoard(int bno, String btitle, String bcontent, String bwriter, Date bdate) {
+		SqlSession session = sqlSessionFactory.openSession();
+		BoardMapper mapper = session.getMapper(BoardMapper.class);
+		Board board = new Board(bno, btitle, bcontent, bwriter, bdate);
+		mapper.updateBoard(board);
+
+		session.commit();
+	}
+```
+
+```html
+<!--	updateBoard 메소드에 필요한 sql 쿼리-->
+<!--	특정 bno를 받아서 그 게시글에 대한 정보만 매개변수를 받아 업데이트함-->
+  	<update id="updateBoard" parameterType="Board">
+  		UPDATE t_board
+  		SET `btitle` = #{btitle},
+		bcontent = #{bcontent},
+    	bwriter = #{bwriter},
+		bdate = #{bdate}
+    	WHERE bno = #{bno}
+  	</update>
+```
+	
+</details>
+<br/>
+ <details>
+    <summary>Delete보기</summary>
+   <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/e094607b-85b0-4225-aca5-1a0be2af64a1" height="200px"  width="300px"/>
+<img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4809a216-7222-4596-8451-ce62ebe605f4" height="200px"  width="300px"/>
+  <br/>   
+
+```java
+//게시글의 bno로 데이터베이스의 게시글을 삭제하는 메서드
+	public void deleteBoard(int bno) {
+		SqlSession session = sqlSessionFactory.openSession();
+		BoardMapper mapper = session.getMapper(BoardMapper.class);
+		mapper.deleteBoard(bno);//bno를 기반으로 데이터베이스에서 특정 게시물 삭제
+
+		session.commit();
+	}
+
+//데이터 베이스의 게시글을 전체 초기화 하는 메서드
+	public void clearBoard(ArrayList<Board> board){
+		SqlSession session = sqlSessionFactory.openSession();
+		BoardMapper mapper = session.getMapper(BoardMapper.class);
+		mapper.clearBoard(board);
+
+		session.commit();
+
+	}
+```
+
+```html
+<!--	deleteBoard 메소드에 필요한 sql 쿼리-->
+<!--	특정 번호 매개변수를 받아서 그번호의 게시글 삭제-->
+  	<delete id="deleteBoard" parameterType="int">
+  		DELETE FROM t_board
+  		WHERE bno = #{bno}
+  	</delete>
+
+<!--	clearBoard 메소드에 필요한 sql 쿼리-->
+<!--	매개변수 사용없이 전체 게시글 삭제-->
+	<delete id="clearBoard" parameterType="Board">
+		DELETE FROM t_board
+	</delete>
+```
+	
+</details>
+<br/>
 Mybatis를 이용해서 자바와 데이터베이스를 연동
   <details>
     <summary>보기</summary>
     <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/73c5bd66-9c49-4f37-a4dd-c0f42603e676" height="200px"  width="300px"/>
 
 </details>
-
-CRUD
-------------------------------------------------------------------------------------------------------------------------------------------------
-<img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/73c5bd66-9c49-4f37-a4dd-c0f42603e676" height="200px"  width="300px"/>
-<img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/df13d800-0fb0-4c52-9218-5404141de2f3" height="200px"  width="300px"/>
-<img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4bcd8d50-4163-4607-b1cd-893a8b49b28b" height="200px"  width="300px"/>
-<img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/e094607b-85b0-4225-aca5-1a0be2af64a1" height="200px"  width="300px"/>
-<img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4809a216-7222-4596-8451-ce62ebe605f4" height="200px"  width="300px"/>
 
 프로젝트후 느낀점
 ------------------------------------------------------------------------------------------------------------------------------------------------
