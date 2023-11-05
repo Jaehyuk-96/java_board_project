@@ -12,9 +12,37 @@ Java_Board_Project
 
 주요기능
 -----------------------------------------------------------------------------------------------------------------------------------------------
-* Java로 CRUD 기능을 가진 게시판을 구현
+<h3>Java로 CRUD 기능을 가진 게시판을 구현
+  <br/>
+   <br/>
+   <details>
+    <summary>Create보기</summary>
+    <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/73c5bd66-9c49-4f37-a4dd-c0f42603e676" height="200px"  width="300px"/>
+  
+```java
+   //게시글을 새롭게 추가하는 메서드
+	public void insertBoard(String btitle, String bcontent, String bwriter, Date bdate) {
+		SqlSession session = sqlSessionFactory.openSession();//새로운 데이터 베이스의 세션을 시작
+		BoardMapper mapper = session.getMapper(BoardMapper.class);//boardmapper의 메서드를 데이터 베이스와 상호작용하는 mapper 객체에 넣음
+		Board board = new Board(btitle, bcontent, bwriter, bdate);//새로운 게시글 객체를 데이터를 받아서 생성
+		mapper.insertBoard(board);//mapper 객체를 사용하여 데이터베이스에 게시글 추가
 
-* Mybatis를 이용해서 자바와 데이터베이스를 연동
+		session.commit();
+	}
+
+```
+ 
+ 
+  
+</details>
+게시물 등록하기
+
+Mybatis를 이용해서 자바와 데이터베이스를 연동
+  <details>
+    <summary>보기</summary>
+    <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/73c5bd66-9c49-4f37-a4dd-c0f42603e676" height="200px"  width="300px"/>
+
+</details>
 
 CRUD
 ------------------------------------------------------------------------------------------------------------------------------------------------
