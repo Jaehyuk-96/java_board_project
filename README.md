@@ -18,18 +18,30 @@ Java_Board_Project
    <details>
     <summary>Create보기</summary>
     <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/73c5bd66-9c49-4f37-a4dd-c0f42603e676" height="200px"  width="300px"/>
-  
+  <br/>   
+
 ```java
-   //게시글을 새롭게 추가하는 메서드
-	public void insertBoard(String btitle, String bcontent, String bwriter, Date bdate) {
-		SqlSession session = sqlSessionFactory.openSession();//새로운 데이터 베이스의 세션을 시작
-		BoardMapper mapper = session.getMapper(BoardMapper.class);//boardmapper의 메서드를 데이터 베이스와 상호작용하는 mapper 객체에 넣음
-		Board board = new Board(btitle, bcontent, bwriter, bdate);//새로운 게시글 객체를 데이터를 받아서 생성
-		mapper.insertBoard(board);//mapper 객체를 사용하여 데이터베이스에 게시글 추가
+// 게시글을 새롭게 추가하는 메서드
+public void insertBoard(String btitle, String bcontent, String bwriter, Date bdate) {
+SqlSession session = sqlSessionFactory.openSession(); // 새로운 데이터베이스의 세션을 시작
+BoardMapper mapper = session.getMapper(BoardMapper.class); // boardmapper의 메서드를 데이터베이스와 상호작용하는 mapper 객체에 넣음
+Board board = new Board(btitle, bcontent, bwriter, bdate); // 새로운 게시글 객체를 데이터를 받아서 생성
+mapper.insertBoard(board); // mapper 객체를 사용하여 데이터베이스에 게시글 추가
+session.commit();
+}
+```
 
-		session.commit();
+```java
+<!--게시물 추가 sql 쿼리-->
+<!--Board의 매개변수를 받아서 게시글을 추가함-->
+    <insert id="insertBoard" parameterType="Board" >
+    	INSERT INTO t_board
+    	SET `btitle` = #{btitle},
+		bcontent = #{bcontent},
+		bwriter = #{bwriter},
+		bdate = #{bdate}
+    </insert >
 	}
-
 ```
  
  
