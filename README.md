@@ -6,7 +6,7 @@
 
 ## 기술스택
 
-<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Conda-Forge&logoColor=white"/>
+<img src="https://img.shields.io/badge/Java-ff7f00?style=for-the-badge&logo=Conda-Forge&logoColor=white"/>
 <img src="https://img.shields.io/badge/MariaDB-000080?style=for-the-badge&logo=MariaDB&logoColor=white">
 <img src="https://img.shields.io/badge/Mybatis-000000?style=for-the-badge&logo=Fluentd&logoColor=white" />
 
