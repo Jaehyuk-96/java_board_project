@@ -47,8 +47,9 @@ bdate = #{bdate}
 <br/>
  <details>
     <summary>Read보기</summary>
-   <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/df13d800-0fb0-4c52-9218-5404141de2f3" height="200px"  width="300px"/>
-  <br/>   
+   <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/df13d800-0fb0-4c52-9218-5404141de2f3" height="400px"  width="400px"/>
+  <br/>
+<br/>   
 
 ```java
 //게시글의 bno로 데이터베이스에서 게시글을 가져오는 메소드
@@ -74,7 +75,7 @@ bdate = #{bdate}
 <br/>
  <details>
     <summary>Update보기</summary>
-   <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4bcd8d50-4163-4607-b1cd-893a8b49b28b" height="200px"  width="300px"/>
+   <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4bcd8d50-4163-4607-b1cd-893a8b49b28b" height="400px"  width="400px"/>
   <br/>   
 
 ```java
@@ -106,8 +107,8 @@ bdate = #{bdate}
 <br/>
  <details>
     <summary>Delete보기</summary>
-   <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/e094607b-85b0-4225-aca5-1a0be2af64a1" height="200px"  width="300px"/>
-<img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4809a216-7222-4596-8451-ce62ebe605f4" height="200px"  width="300px"/>
+   <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/e094607b-85b0-4225-aca5-1a0be2af64a1" height="400px"  width="400px"/>
+<img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4809a216-7222-4596-8451-ce62ebe605f4" height="400px"  width="400px"/>
   <br/>   
 
 ```java
