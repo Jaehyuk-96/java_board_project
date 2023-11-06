@@ -17,7 +17,7 @@
     <summary>Create보기
     </summary>
     <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/73c5bd66-9c49-4f37-a4dd-c0f42603e676" height="400px"  width="400px"/>
-  <br/>   
+
 	   
 ```java
 // 게시글을 새롭게 추가하는 메서드
@@ -31,7 +31,7 @@ session.commit();
 }
 ```
 
-```Html
+```html
 <!--게시글 추가 sql 쿼리-->
 <!--Board의 매개변수를 받아서 게시글을 추가함-->
 <insert id="insertBoard" parameterType="Board" >
@@ -44,7 +44,7 @@ bdate = #{bdate}
 	}
 ```
 </details>
-<br/>
+
  <details>
     <summary>Read보기</summary>
    <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/df13d800-0fb0-4c52-9218-5404141de2f3" height="400px"  width="400px"/>
@@ -72,11 +72,11 @@ bdate = #{bdate}
 ```
 	
 </details>
-<br/>
+
  <details>
     <summary>Update보기</summary>
    <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4bcd8d50-4163-4607-b1cd-893a8b49b28b" height="400px"  width="400px"/>
-  <br/>   
+    
 
 ```java
 //데이터베이스의 게시글을 수정하는 메서드
@@ -104,13 +104,12 @@ bdate = #{bdate}
 ```
 	
 </details>
-<br/>
+
  <details>
     <summary>Delete보기</summary>
    <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/e094607b-85b0-4225-aca5-1a0be2af64a1" height="400px"  width="400px"/>
 <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/4809a216-7222-4596-8451-ce62ebe605f4" height="400px"  width="400px"/>
-  <br/>   
-
+ 
 ```java
 //게시글의 bno로 데이터베이스의 게시글을 삭제하는 메서드
 	public void deleteBoard(int bno) {
@@ -152,7 +151,8 @@ bdate = #{bdate}
 ### Mybatis를 이용해서 자바와 데이터베이스를 연동
   <details>
     <summary>Mybatis보기</summary>
-    ```html
+	  
+```html
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -202,6 +202,24 @@ public class DBUtil {//데이터 베이스 연결정보와 Mybatis 설정을 관
 			e.printStackTrace();
 		}
 	}
+```
+</details>
+  <details>
+    <summary>DB 테이블 만들기</summary>
+
+```sql
+//sql tboard
+
+create table t_board (
+    bno            int             primary key auto_increment,
+    btitle          varchar(20)    not null,
+    bcontent       varchar(200)     not null,
+    bwriter         varchar(13)     not null,
+    bdate			datetime		not null
+);
+
+
+insert into t_board set `btitle` = '제목', `bcontent`='내용', `bwriter`='작성자';
 ```
    
 
