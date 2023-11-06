@@ -16,7 +16,7 @@
    <details>
     <summary>Create보기
     </summary>
-    <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/73c5bd66-9c49-4f37-a4dd-c0f42603e676" height="200px"  width="300px"/>
+    <img src="https://github.com/Jaehyuk-96/java_board_project/assets/145963663/73c5bd66-9c49-4f37-a4dd-c0f42603e676" height="400px"  width="400px"/>
   <br/>   
 	   
 ```java
